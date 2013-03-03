@@ -1,5 +1,8 @@
 @import "normalize";
+@import "js-image-slider";
+
 /* http://colorschemedesigner.com/#0c41TsJjAw0w0 */
+
 .content{
   background-color: #CEA068;
   width: 990px;
@@ -7,9 +10,13 @@
   margin-right: auto;
 }
 
+h1{
+  text-align: center;
+}
+
 .description{
   width:700px;
-  margin: 20px 0;
+  margin: 50px 0 20px 0;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
