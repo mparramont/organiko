@@ -47,6 +47,10 @@
 #   end
 # end
 
+# Localization (i18n)
+activate :i18n, mount_at_root: :es
+
+
 set :css_dir, 'stylesheets'
 
 set :js_dir, 'javascripts'
