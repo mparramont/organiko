@@ -1,6 +1,13 @@
+---
+title: :home
+---
+
 <div class="welcome">
   <h1>Organiko - <%= I18n.t(:subtitle) %></h1>
-  <p class="doc">
-    <%= link_to "Read Online Documentation", "http://middlemanapp.com/" %>
+  <p>
+  <%= I18n.t(:description) %> <%= link_to 'www.fruitsmontmany.es', 'http://www.fruitsmontmany.es' %>
   </p>
+  Carlos Parramón <br>
+  654 093 919 / 931 052 000 <br>
+  <%= mail_to 'organiko@organiko.es' %>
 </div>
