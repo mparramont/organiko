@@ -3,18 +3,21 @@
 
 /* http://colorschemedesigner.com/#0c41TsJjAw0w0 */
 
-.content{
-  background-color: #CEA068;
+$dark-brown: #9C3210;
+$light-brown: #CEA068;
+
+.content {
+  background-color: $light-brown;
   width: 990px;
   margin-left: auto;
   margin-right: auto;
 }
 
-h1{
+h1 {
   text-align: center;
 }
 
-.description{
+.description {
   width:700px;
   margin: 50px 0 20px 0;
   text-align: center;
@@ -22,15 +25,17 @@ h1{
   margin-right: auto;
 }
 
-.footer{
-  background-color: #9C3210;
+.footer {
+  background-color: $dark-brown;
   color: white;
   padding: 20px 0;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+
+  a {
+    color: $light-brown;
+  }
+
 }
 
-.footer a{
-  color: #CEA068;
-}

@@ -1,18 +1,13 @@
-var sliderOptions=
-{
-	sliderId: "slider",
-	effect: "13",
-	effectRandom: false,
-	pauseTime: 2500,
-	transitionTime: 500,
-	slices: 12,
-	boxes: 8,
-	hoverPause: true,
-	autoAdvance: true,
-	captionOpacity: 0.3,
-	captionEffect: "fade",
-	thumbnailsWrapperId: "thumbs",
-	m: false,
+var sliderOptions = {
+  sliderId: "slider",
+  effect: "13",
+  pauseTime: 4000,
+  transitionTime: 1000,
+  hoverPause: true,
+  autoAdvance: true,
+  captionOpacity: 0.3,
+  captionEffect: "fade",
+  thumbnailsWrapperId: "thumbs",
 };
 
 var imageSlider=new mcImgSlider(sliderOptions);
