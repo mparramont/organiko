@@ -48,7 +48,7 @@
 # end
 
 # Localization (i18n)
-activate :i18n, mount_at_root: :es
+activate :i18n, mount_at_root: false
 
 
 set :css_dir, 'stylesheets'

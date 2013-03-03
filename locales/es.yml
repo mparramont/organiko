@@ -1,6 +1,6 @@
 es:
   layout:
-    change_language: 'Change language'
+    language: 'Idioma'
   index:
     subtitle: "Del huerto a tu casa"
     description: "Fruta y verdura ecológica certificada por el CCPAE, procedente de los campos de la familia Montmany, ubicados en Begues y Torrelles de Llobregat."

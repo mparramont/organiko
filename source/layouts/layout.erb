@@ -1,5 +1,3 @@
----
----
 <!doctype html>
 <html>
   <head>
@@ -8,21 +6,21 @@
     <!-- Always force latest IE rendering engine or request Chrome Frame -->
     <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
     
-    <!-- Use title if it's in the page YAML frontmatter -->
     <title>Organiko - <%= I18n.t(data.page.title) %></title>
-    
-    <%= stylesheet_link_tag 'normalize', 'all' %>
-    <%= javascript_include_tag  'all' %>
+
+    <link rel="stylesheet" href="../stylesheets/all.css">
+    <link rel="stylesheet" href="../stylesheets/normalize.css">
+
   </head>
   
   <body class='<%= page_classes %>'>
     <div class='content'>
-      <img src='images/header.jpg'>
+      <img src='../images/header.jpg'>
       <%= yield %>
       <div class='footer'>
-        <%= I18n.t('layout.change_language') %>:
-        <a href='/'>Castellano</a>
-        <a href='/en'>English</a>
+        <%= I18n.t('layout.language') %>: 
+        <a href='../es'>Castellano</a> / 
+        <a href='../en'>English</a>
       </div>
     </div>
   </body>
