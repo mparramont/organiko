@@ -1,0 +1,27 @@
+/* http://colorschemedesigner.com/#0c41TsJjAw0w0 */
+body{
+}
+
+.content{
+  background-color: #CEA068;
+  width: 990px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.description{
+  width:700px;
+  margin: 20px 0;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer{
+  background-color: #9C3210;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
