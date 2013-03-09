@@ -13,16 +13,20 @@ $light-brown: #CEA068;
   margin-right: auto;
 }
 
-h1 {
-  text-align: center;
+#slider{
+  margin-top: 30px;
 }
 
 .description {
-  width:700px;
-  margin: 50px 0 20px 0;
-  text-align: center;
+  width:600px;
+  margin: 60px 0 40px 0;
   margin-left: auto;
   margin-right: auto;
+}
+.bold { font-weight: bold; }
+a {
+  color: $dark-brown;
+  text-decoration: none;
 }
 
 .footer {

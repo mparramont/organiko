@@ -2,8 +2,22 @@ es:
   layout:
     language: 'Idioma'
   index:
-    subtitle: "Del huerto a tu casa"
-    description: "Fruta y verdura ecológica certificada por el CCPAE, procedente de los campos de la familia Montmany, ubicados en Begues y Torrelles de Llobregat."
+    description: '
+Organiko es un proyecto pensado para facilitar el contacto entre los pequeños productores ecológicos y el consumidor.<br/><br/>
+
+Hacemos repartos de cestas de productos ecológicas en Castelldefels y Gavá. Nuestra verdura, frutas y algunos otros productos proceden de la familia <a href="http://fruitsmontmany.es">Montmany</a> y de sus intercambios con otros agricultores ecológicos.<br/><br/>
+
+Un proyecto en crecimiento, con mucho corazón, para aportar un  granito de arena en el cuidado de nuestra madre Tierra.<br/><br/>'
+
+    how_it_works_question: 'Cómo funciona?'
+    how_it_works: '
+Cada viernes recibirás un correo electrónico en el que te enviamos un formulario con los productos de temporada de esa semana. Escoges en ese sencillo formulario tus productos.<br/><br/>
+
+Tu pedido lo tienes que enviar como máximo el lunes siguiente a las 22 horas, indicando tu nombre completo, dirección y horario de entrega, así como un teléfono de contacto.<br/><br/>
+
+Los repartos los hacemos los jueves de 13:00 a 21:00.<br/><br/>'
+
+    contact: 'Contacto:'
 
   titles:
-    home: "Del Huerto a tu casa"
+    home: 'Del Huerto a tu casa'
