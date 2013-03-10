@@ -3,7 +3,7 @@
 #sliderFrame {position:relative;width:700px;margin: 0 auto;} /*remove the "margin:0 auto;" if you want to align the whole slider to the left side*/
 
 #slider {
-  width:700px;height:306px;/* Make it the same size as your images */
+  width:700px;height:400px;/* Make it the same size as your images */
 	background:#fff url(../images/loading.gif) no-repeat 50% 50%;
 	position:relative;
 	margin:0 auto;/*make the image slider center-aligned */
@@ -54,7 +54,7 @@ div.mc-caption a:hover {
 
 /* ------ built-in navigation bullets wrapper ------*/
 div.navBulletsWrapper  {
-	top:320px; left:280px; /* Its position is relative to the #slider */
+	top:420px; left:280px; /* Its position is relative to the #slider */
 	width:150px;
 	background:none;
 	padding-left:20px;
