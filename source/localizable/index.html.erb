@@ -2,23 +2,21 @@
 title: 'titles.home'
 ---
 
-<div class="welcome">
-  <div id="slider">
-    <img src="../images/slider-1.jpg"/>
-    <img src="../images/slider-2.jpg"/>
-    <img src="../images/slider-3.jpg"/>
-    <img src="../images/slider-4.jpg"/>
-    <img src="../images/slider-5.jpg"/>
-  </div>
-  <div class="description">
-    <p>
-      <%= I18n.t('index.description') %>
-      <p class="bold"><%= I18n.t('index.how_it_works_question') %></p>
-      <p><%= I18n.t('index.how_it_works') %></p>
-    </p>
-    <p class="bold"><%= I18n.t('index.contact') %></p>
-    Carlos Parramón <br>
-    654 093 919 / 931 052 000 <br>
-    <%= mail_to 'organiko@organiko.es' %>
-  </div>
+<div id="slider">
+  <img src="../images/slider-1.jpg"/>
+  <img src="../images/slider-2.jpg"/>
+  <img src="../images/slider-3.jpg"/>
+  <img src="../images/slider-4.jpg"/>
+  <img src="../images/slider-5.jpg"/>
+</div>
+<div class="description">
+  <p>
+    <%= I18n.t('index.description') %>
+    <p class="bold"><%= I18n.t('index.how_it_works_question') %></p>
+    <p><%= I18n.t('index.how_it_works') %></p>
+  </p>
+  <p class="bold"><%= I18n.t('index.contact') %></p>
+  Carlos Parramón <br>
+  654 093 919 / 931 052 000 <br>
+  <%= mail_to 'organiko@organiko.es' %>
 </div>
