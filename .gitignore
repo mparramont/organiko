@@ -13,3 +13,4 @@
 # Ignore Sass' cache
 /.sass-cache
 *.swp
+.DS_Store
