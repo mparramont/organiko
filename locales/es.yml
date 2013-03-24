@@ -2,6 +2,14 @@ es:
   layout:
     description: 'Reparto de cestas de frutas, verduras y otros productos ecológicos en Castelldefels y Gava, Barcelona.'
   index:
+    images:
+      one: Granja Montmany.
+      two: Selección de productos ecológicos que ofrece Organiko.
+      three: Cerezas de la granja Montmany.
+      four: Conservas ecológicas de la granja Montmany.
+      five: Alcachofas de la granja Montmany.
+      six: Melocotones de la granja Montmany.
+      seven: Puerros de la granja Montmany.
     description: '
 Organiko es un proyecto pensado para facilitar el contacto entre los pequeños productores ecológicos y el consumidor.<br/><br/>
 

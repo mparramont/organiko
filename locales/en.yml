@@ -2,6 +2,14 @@ en:
   layout:
     description: 'Delivery of ecological fruits, vegetables and other products in Castelldefels and Gava, Barcelona.'
   index:
+    images:
+      one: Montmany farm.
+      two: Selection of ecologic products from Organiko.
+      three: Cherries from Montmany farm.
+      four: Ecologic preserves from Montmany.
+      five: Artichokes from Montmany farm.
+      six: Peaches from Montmany farm.
+      seven: Leeks from Montmany farm.
     description: '
 Organiko is a project created to facilitate contact between small organic producers and consumers.<br/><br/>
 
@@ -17,6 +25,5 @@ You have to send your order before midnight of the following Monday, indicating 
 
 If you are interested, please contact us using the data below.<br/><br/>"
     contact: 'Contact:'
-
   titles:
     home: 'From the garden to your home'
