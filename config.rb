@@ -89,6 +89,6 @@ configure :build do
     sync.aws_access_key_id = 'AKIAJLVGEQQZGZJQFOBQ'
     sync.aws_secret_access_key = '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'
     sync.existing_remote_files = 'keep'
-    sync.after_build = false
+    sync.after_build = true
   end
 end
