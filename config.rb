@@ -78,4 +78,15 @@ configure :build do
 
   # Or use a different image path
   # set :http_path, "/Content/images/"
+
+  # sync to Amazon s3
+  activate :sync do |sync|
+    sync.fog_provider = 'AWS'
+    sync.fog_directory = 'organiko.es' # Your bucket name
+    sync.fog_region = 'eu-west-1'
+    sync.aws_access_key_id = 'AKIAJLVGEQQZGZJQFOBQ'
+    sync.aws_secret_access_key = 'dOf23jt+F07AShEEyuMwyT0x40lCfKY4JLz/K+OJ'
+    sync.existing_remote_files = 'keep'
+    sync.after_build = true
+  end
 end
