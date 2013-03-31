@@ -138,6 +138,6 @@ PLATFORMS
 
 DEPENDENCIES
   middleman (~> 3.0.12)
-  middleman-minify-html
-  middleman-sprockets
-  middleman-sync
+  middleman-minify-html (~> 3.0.0)
+  middleman-sprockets (~> 3.0.10)
+  middleman-sync (~> 3.0.9)
