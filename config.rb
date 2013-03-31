@@ -79,6 +79,8 @@ configure :build do
   # Or use a different image path
   # set :http_path, "/Content/images/"
 
+  activate :favicon_maker
+
   # sync to Amazon s3
   activate :sync do |sync|
     sync.fog_provider = 'AWS'
@@ -87,6 +89,6 @@ configure :build do
     sync.aws_access_key_id = 'AKIAJLVGEQQZGZJQFOBQ'
     sync.aws_secret_access_key = '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'
     sync.existing_remote_files = 'keep'
-    sync.after_build = true
+    sync.after_build = false
   end
 end
