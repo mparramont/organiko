@@ -89,14 +89,14 @@ configure :build do
     ]
   }
 
-  # sync to Amazon s3
-  activate :sync do |sync|
-    sync.fog_provider = 'AWS'
-    sync.fog_directory = 'organiko.es' # Your bucket name
-    sync.fog_region = 'eu-west-1'
-    sync.aws_access_key_id = 'AKIAJLVGEQQZGZJQFOBQ'
-    sync.aws_secret_access_key = 'dOf23jt+F07AShEEyuMwyT0x40lCfKY4JLz/K+OJ'
-    sync.existing_remote_files = 'keep'
-    sync.after_build = false
+  # sync to Amazon S3
+  activate :s3_sync do |s3_sync|
+    s3_sync.bucket = 'organiko.es'
+    s3_sync.region = 'eu-west-1'
+    s3_sync.aws_access_key_id = ENV['AWS_ACCESS_KEY_ID']
+    s3_sync.aws_secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
+    s3_sync.delete = false # We delete stray files by default.
+    s3_sync.prefer_gzip = false
+    s3_sync.after_build = false
   end
 end
