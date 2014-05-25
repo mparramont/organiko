@@ -11,14 +11,11 @@ title: 'titles.home'
   <img src="../images/slider-6.jpg" alt="<%= I18n.t('index.images.six') %>"/>
   <img src="../images/slider-7.jpg" alt="<%= I18n.t('index.images.seven') %>"/>
 </div>
-<div class="description">
+<div class="description centered">
   <p>
     <%= I18n.t('index.description') %>
     <p class="bold"><%= I18n.t('index.how_it_works_question') %></p>
     <p><%= I18n.t('index.how_it_works') %></p>
   </p>
-  <p class="bold"><%= I18n.t('index.contact') %></p>
-  Carlos Parramón <br>
-  654 093 919 / 931 052 000 <br>
-  <%= mail_to 'organiko@organiko.es' %>
+  <%= partial 'contact' %>
 </div>

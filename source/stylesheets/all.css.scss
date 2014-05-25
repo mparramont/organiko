@@ -5,6 +5,8 @@
 
 $dark-brown: #9C3210;
 $light-brown: #CEA068;
+$dark-green: #0B6D3C;
+$white: white;
 
 .main-header-container{
   background-color: $dark-brown;
@@ -19,6 +21,23 @@ $light-brown: #CEA068;
   margin-right: auto;
 }
 
+.menu {
+  background-color: $dark-green;
+  margin: 0 0;
+  padding: 8px 0;
+  text-align: center;
+
+  > li {
+    display: inline-block;
+    margin: 0 40px;
+
+    > a {
+      font-size: 20px;
+      color: $white;
+    }
+  }
+}
+
 .content {
   background-color: $light-brown;
   padding-top: 20px;
@@ -26,10 +45,15 @@ $light-brown: #CEA068;
   margin-right: auto;
 }
 
-.description {
+.centered {
   max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.description {
   padding: 0 10px;
-  margin: 55px auto 40px auto;
+  margin-top: 55px;
 }
 
 .bold {
@@ -42,14 +66,26 @@ a {
 }
 
 .footer {
-  background-color: $dark-brown;
+  margin-top: 40px;
+  background-color: $dark-green;
   color: white;
   padding: 20px 0;
   text-align: center;
 
   a {
-    color: $light-brown;
+    color: $white;
   }
 
 }
 
+.order {
+  margin-bottom: 30px;
+}
+
+.order-iframe {
+  background-color: transparent;
+  border: 0px none transparent;
+  display: block;
+  margin: 5px auto 40px auto;
+  padding: 0px;
+}

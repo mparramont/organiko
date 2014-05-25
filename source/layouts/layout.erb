@@ -22,13 +22,19 @@
 
   <body class='<%= page_classes %>'>
     <div class='main-header-container'>
-      <img class='main-header' src='../images/header.jpg'></header>
+      <a href='.'>
+        <img class='main-header' src='../images/header.jpg'></header>
+      </a>
     </div>
+    <ul class='menu'>
+      <li><a href='.'><%= I18n.t('layout.menu.home') %></a></li>
+      <li><a href='order.html'><%= I18n.t('layout.menu.order') %></a></li>
+    </ul>
     <div class='content'>
       <%= yield %>
       <div class='footer'>
-        <a href='../es'>Castellano</a> / 
-        <a href='../en'>English</a>
+        <a href='../es/'>Castellano</a> /
+        <a href='../en/'>English</a>
       </div>
     </div>
     <%= javascript_include_tag 'all' %>

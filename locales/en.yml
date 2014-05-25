@@ -1,6 +1,9 @@
 en:
   layout:
     description: 'Delivery of ecological fruits, vegetables and other products in Castelldefels, Gavà, Begues and neighboring towns in Barcelona.'
+    menu:
+      home: 'Home'
+      order: 'Order products'
   index:
     images:
       one: Montmany farm.
@@ -13,17 +16,24 @@ en:
     description: '
 Organiko is a project created to facilitate contact between small organic producers and consumers.<br/><br/>
 
-We deliver baskets with ecological products in Castelldefels, Gavà, Begues and neighboring towns. Our vegetables, fruits and other products come from the <a href="http://fruitsmontmany.es"> Montmany </a> family and their exchanges with other organic farmers. <br/><br/>
+We deliver baskets with ecological products in Castelldefels, Gavà, Begues and neighboring towns. Our vegetables, fruits and other products come from the <a href="http://fruitsmontmany.es" target="blank"> Montmany </a> family and their exchanges with other organic farmers. <br/><br/>
 
 A growing project with all of our heart, to provide our two cents to the care of our mother Earth. <br/><br/> '
 
     how_it_works_question: 'How does it work?'
     how_it_works: "
-Every Friday you'll receive an email in which we send a form with the seasonal produce for that week. You then choose your products from that simple form. <br/><br/>
+You can check the available products, and make your first order, in the <a href='order.html'>Orders</a> section of this site.<br/><br/>
+From then on, every Friday you'll receive an email in which we send a form with the seasonal produce for that week. You then choose your products from that simple form. <br/><br/>
 
-You have to send your order before midnight of the following Monday, indicating your full name, address, contact number and prefered delivery time. We make the deliveries every Thursday from 13:00 to 21:00. <br/><br/>
+You can send your order before midnight of the following Monday, indicating your full name, address, contact number and prefered delivery time. We make the deliveries every Thursday from 13:00 to 21:00. <br/><br/>
 
-If you are interested, please contact us using the data below.<br/><br/>"
-    contact: 'Contact:'
+If you need more information, or have something to tell us, please contact us!"
+
+  order:
+    title: 'Order products'
+    description: 'To order products, please fill the form below with the products you want, and we will contact you to verify your data and the delivery date and time.'
+    doubts: 'If you have any doubt or comment, do not hesitate in contacting us:'
+
   titles:
     home: 'From the garden to your home'
+    order: 'Order products'
