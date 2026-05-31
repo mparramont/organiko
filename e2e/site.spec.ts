@@ -11,7 +11,7 @@ test.describe('root redirect', () => {
 test.describe('Spanish site', () => {
   test('home page loads with key content', async ({ page }) => {
     await page.goto('/es/');
-    await expect(page).toHaveTitle('Organiko - Del Huerto a tu casa');
+    await expect(page).toHaveTitle('Organiko — Del Huerto a tu casa');
     await expect(page.locator('.main-header')).toBeVisible();
     await expect(page.locator('#slider')).toBeAttached();
     await expect(page.getByRole('link', { name: 'Hacer un pedido' })).toBeVisible();
@@ -30,7 +30,7 @@ test.describe('Spanish site', () => {
 test.describe('English site', () => {
   test('home page loads with key content', async ({ page }) => {
     await page.goto('/en/');
-    await expect(page).toHaveTitle('Organiko - From the garden to your home');
+    await expect(page).toHaveTitle('Organiko — From the garden to your home');
     await expect(page.locator('.main-header')).toBeVisible();
     await expect(page.locator('#slider')).toBeAttached();
     await expect(page.getByRole('link', { name: 'Order products' })).toBeVisible();
@@ -60,6 +60,42 @@ test.describe('language switcher', () => {
     await expect(page).toHaveURL(/\/es\/$/);
     await expect(page).toHaveTitle(/Del Huerto a tu casa/);
   });
+});
+
+test.describe('share metadata (OG + Twitter Card)', () => {
+  const cases = [
+    { path: '/en/', title: 'From the garden to your home', locale: 'en_GB' },
+    { path: '/es/', title: 'Del Huerto a tu casa',         locale: 'es_ES' },
+    { path: '/en/order', title: 'Order products',          locale: 'en_GB' },
+    { path: '/es/order', title: 'Hacer un pedido',         locale: 'es_ES' },
+  ];
+
+  for (const { path, title, locale } of cases) {
+    test(`${path} has correct OG and Twitter tags`, async ({ page }) => {
+      await page.goto(path);
+      const og = (prop: string) =>
+        page.locator(`meta[property="${prop}"]`).getAttribute('content');
+      const tw = (name: string) =>
+        page.locator(`meta[name="${name}"]`).getAttribute('content');
+
+      expect(await og('og:title')).toContain(title);
+      expect(await og('og:site_name')).toBe('Organiko');
+      expect(await og('og:type')).toBe('website');
+      expect(await og('og:url')).toContain(path.replace(/\/$/, ''));
+      expect(await og('og:locale')).toBe(locale);
+
+      const imgUrl = await og('og:image');
+      expect(imgUrl).toMatch(/^https:\/\//);
+      expect(imgUrl).toContain('slider-2.jpg');
+      // og:image must return 200
+      const resp = await page.request.get(imgUrl!);
+      expect(resp.status()).toBe(200);
+
+      expect(await tw('twitter:card')).toBe('summary_large_image');
+      expect(await tw('twitter:title')).toContain(title);
+      expect(await tw('twitter:image')).toBe(imgUrl);
+    });
+  }
 });
 
 test.describe('contact redaction', () => {
