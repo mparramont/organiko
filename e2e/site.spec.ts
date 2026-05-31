@@ -82,3 +82,43 @@ test.describe('static assets', () => {
     expect(naturalWidth).toBeGreaterThan(0);
   });
 });
+
+test.describe('image carousel', () => {
+  const activeSrc = (page) =>
+    page.locator('#slider img.active').getAttribute('src');
+
+  test('renders one nav dot per slide', async ({ page }) => {
+    await page.goto('/es/');
+    const slides = await page.locator('#slider img').count();
+    expect(slides).toBe(7);
+    await expect(page.locator('.slider-dots button')).toHaveCount(slides);
+  });
+
+  test('auto-advances to the next slide', async ({ page }) => {
+    await page.goto('/es/');
+    await expect(page.locator('#slider img.active')).toHaveCount(1);
+    const first = await activeSrc(page);
+    // Auto-advance interval is 4s; wait for the active slide to change.
+    await expect
+      .poll(() => activeSrc(page), { timeout: 8000 })
+      .not.toBe(first);
+  });
+
+  test('clicking a nav dot jumps to that slide', async ({ page }) => {
+    await page.goto('/es/');
+    await page.locator('.slider-dots button').nth(4).click();
+    await expect(page.locator('#slider img').nth(4)).toHaveClass(/active/);
+    expect(await activeSrc(page)).toContain('slider-5');
+    await expect(page.locator('.slider-dots button').nth(4)).toHaveClass(
+      /active/
+    );
+  });
+
+  test('the active slide image actually loads', async ({ page }) => {
+    await page.goto('/es/');
+    const nw = await page
+      .locator('#slider img.active')
+      .evaluate((el: HTMLImageElement) => el.naturalWidth);
+    expect(nw).toBeGreaterThan(0);
+  });
+});

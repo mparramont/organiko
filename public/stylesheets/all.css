@@ -36,20 +36,45 @@ button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
 textarea { overflow: auto; vertical-align: top; }
 table { border-collapse: collapse; border-spacing: 0; }
 
-/* Slider */
-#sliderFrame { position: relative; width: 700px; margin: 0 auto; }
-#slider { width: 700px; height: 400px; background: #fff url(../images/loading.gif) no-repeat 50% 50%; position: relative; margin: 0 auto; box-shadow: 0px 1px 5px #999999; }
-#slider img { position: absolute; border: none; display: none; }
-#slider a.imgLink { z-index: 2; display: none; position: absolute; top: 0px; left: 0px; border: 0; padding: 0; margin: 0; width: 100%; height: 100%; }
-div.mc-caption-bg, div.mc-caption-bg2 { position: absolute; width: 100%; height: auto; padding: 0; left: 0px; bottom: 0px; z-index: 3; overflow: hidden; font-size: 0; }
-div.mc-caption-bg { background-color: black; }
-div.mc-caption { font: bold 14px/20px Arial; color: #EEE; z-index: 4; padding: 10px 0; text-align: center; }
-div.mc-caption a { color: #FB0; }
-div.mc-caption a:hover { color: #DA0; }
-div.navBulletsWrapper { top: 420px; left: 260px; width: 155px; background: none; padding-left: 20px; position: relative; z-index: 5; cursor: pointer; }
-div.navBulletsWrapper div { width: 11px; height: 11px; background: transparent url(../images/bullet.png) no-repeat 0 0; float: left; overflow: hidden; vertical-align: middle; cursor: pointer; margin-right: 11px; }
-div.navBulletsWrapper div.active { background-position: 0 -11px; }
-#slider { transform: translate3d(0,0,0); -ms-transform: translate3d(0,0,0); -moz-transform: translate3d(0,0,0); -o-transform: translate3d(0,0,0); }
+/* Image slider (lightweight, responsive cross-fade carousel) */
+#slider {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  aspect-ratio: 700 / 400;
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0px 1px 5px #999999;
+}
+#slider img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+#slider img.active { opacity: 1; }
+
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 0 0;
+}
+.slider-dots button {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border: 1px solid #0B6D3C;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+}
+.slider-dots button.active { background: #0B6D3C; }
 
 /* Main styles */
 .main-header-container { background-color: #9C3210; }
@@ -84,30 +109,8 @@ img { max-width: 100%; }
   .menu > li { margin: 0 14px; }
   .menu > li > a { font-size: 18px; }
 
-  /* Fluid image slider: fill the width and keep the image's aspect ratio.
-     background-size is !important so it overrides the slider script's inline
-     `background` shorthand (which would otherwise reset it to auto). */
-  #sliderFrame { width: 100% !important; }
-  #slider {
-    width: 100% !important;
-    height: auto !important;
-    aspect-ratio: 700 / 400;
-    background-size: cover !important;
-    background-position: center !important;
-  }
-  #slider img { max-width: 100%; height: auto; }
-
-  /* The slider's nav bullets are absolutely offset for the 700px layout;
-     reset and centre them so they don't overflow on small screens. */
-  div.navBulletsWrapper {
-    top: auto;
-    left: auto;
-    width: auto;
-    padding-left: 0;
-    display: flex;
-    justify-content: center;
-  }
-  div.navBulletsWrapper div { float: none; }
+  /* The slider is fluid by default (max-width:700px, aspect-ratio), so it
+     already adapts here — no overrides needed. */
 
   /* Order form should use the full width on phones */
   .order-iframe { width: 95% !important; height: 520px; }

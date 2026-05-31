@@ -102,25 +102,7 @@ img { max-width: 100%; }
   .menu > li { margin: 0 14px; }
   .menu > li > a { font-size: 18px; }
 
-  #sliderFrame { width: 100% !important; }
-  #slider {
-    width: 100% !important;
-    height: auto !important;
-    aspect-ratio: 700 / 400;
-    background-size: cover !important;
-    background-position: center !important;
-  }
-  #slider img { max-width: 100%; height: auto; }
-
-  div.navBulletsWrapper {
-    top: auto;
-    left: auto;
-    width: auto;
-    padding-left: 0;
-    display: flex;
-    justify-content: center;
-  }
-  div.navBulletsWrapper div { float: none; }
+  // The slider is fluid by default (max-width:700px, aspect-ratio).
 
   .order-iframe { width: 95% !important; height: 520px; }
 }
