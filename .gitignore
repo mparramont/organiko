@@ -16,3 +16,4 @@
 *.swp
 .DS_Store
 /image_backup
+.wrangler/
