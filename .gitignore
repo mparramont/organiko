@@ -16,3 +16,9 @@
 *.swp
 .DS_Store
 /image_backup
+.wrangler/
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/.playwright/
