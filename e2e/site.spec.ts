@@ -15,7 +15,7 @@ test.describe('Spanish site', () => {
     await expect(page.locator('.main-header')).toBeVisible();
     await expect(page.locator('#slider')).toBeAttached();
     await expect(page.getByRole('link', { name: 'Hacer un pedido' })).toBeVisible();
-    await expect(page.getByText('organiko@organiko.es')).toBeVisible();
+    await expect(page.getByText('organiko@organiko.es')).not.toBeAttached();
   });
 
   test('navigates to the order page', async ({ page }) => {
@@ -34,7 +34,7 @@ test.describe('English site', () => {
     await expect(page.locator('.main-header')).toBeVisible();
     await expect(page.locator('#slider')).toBeAttached();
     await expect(page.getByRole('link', { name: 'Order products' })).toBeVisible();
-    await expect(page.getByText('organiko@organiko.es')).toBeVisible();
+    await expect(page.getByText('organiko@organiko.es')).not.toBeAttached();
   });
 
   test('navigates to the order page', async ({ page }) => {
@@ -62,7 +62,33 @@ test.describe('language switcher', () => {
   });
 });
 
+test.describe('contact redaction', () => {
+  const pages = ['/es/', '/en/', '/es/order', '/en/order'];
+
+  for (const path of pages) {
+    test(`${path} has no email or phone`, async ({ page }) => {
+      await page.goto(path);
+      await expect(page.getByText('organiko@organiko.es')).not.toBeAttached();
+      await expect(page.getByText('654 093 919')).not.toBeAttached();
+      await expect(page.getByText('Carlos Parramón')).not.toBeAttached();
+    });
+  }
+});
+
 test.describe('static assets', () => {
+  test('favicon is declared on every page', async ({ page }) => {
+    for (const path of ['/es/', '/en/', '/es/order', '/en/order']) {
+      await page.goto(path);
+      const href = await page.evaluate(
+        () => document.querySelector('link[rel="icon"]')?.getAttribute('href')
+      );
+      expect(href, `${path} missing favicon`).toMatch(/favicon/);
+      // favicon file actually returns 200
+      const abs = new URL(href!, page.url()).href;
+      const resp = await page.request.get(abs);
+      expect(resp.status(), `${path} favicon 404`).toBe(200);
+    }
+  });
   test('stylesheet loads and applies brand colors', async ({ page }) => {
     await page.goto('/es/');
     const menuColor = await page.locator('.menu').evaluate(
