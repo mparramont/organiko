@@ -66,3 +66,55 @@ a { color: #9C3210; text-decoration: none; }
 .footer a { color: white; }
 .order { margin-bottom: 30px; }
 .order-iframe { background-color: transparent; border: 0px none transparent; display: block; margin: 5px auto 40px auto; padding: 0px; }
+
+/* ==========================================================================
+   Responsive / mobile
+   ========================================================================== */
+
+/* Never let any element force horizontal scrolling */
+html, body { max-width: 100%; overflow-x: hidden; }
+img { max-width: 100%; }
+
+@media (max-width: 720px) {
+  /* Header image should shrink with the viewport instead of forcing 530px */
+  .main-header { min-width: 0; }
+
+  /* Tighter, wrap-friendly nav */
+  .menu { padding: 10px 0; }
+  .menu > li { margin: 0 14px; }
+  .menu > li > a { font-size: 18px; }
+
+  /* Fluid image slider: fill the width and keep the image's aspect ratio.
+     background-size is !important so it overrides the slider script's inline
+     `background` shorthand (which would otherwise reset it to auto). */
+  #sliderFrame { width: 100% !important; }
+  #slider {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 700 / 400;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+  #slider img { max-width: 100%; height: auto; }
+
+  /* The slider's nav bullets are absolutely offset for the 700px layout;
+     reset and centre them so they don't overflow on small screens. */
+  div.navBulletsWrapper {
+    top: auto;
+    left: auto;
+    width: auto;
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+  }
+  div.navBulletsWrapper div { float: none; }
+
+  /* Order form should use the full width on phones */
+  .order-iframe { width: 95% !important; height: 520px; }
+}
+
+@media (max-width: 400px) {
+  .menu > li { margin: 0 8px; }
+  .menu > li > a { font-size: 16px; }
+  .description { margin-top: 30px; }
+}
